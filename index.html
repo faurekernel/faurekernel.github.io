@@ -3,230 +3,729 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetCare Pro | Servicios de Cuidado de Mascotas</title>
+    <title>Purrfect Neighbour | Servicios de Cuidado de Mascotas</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Georgia', serif;
             line-height: 1.6;
             color: #333;
+            background-color: #fafafa;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4a90e2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4a90e2;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(74, 144, 226, 0.8), rgba(74, 144, 226, 0.8)), 
+                        url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 2rem 0;
             text-align: center;
+            padding: 8rem 0;
         }
-        
+
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        
-        .hero p {
-            font-size: 1.2rem;
+
+        .hero h2 {
+            font-size: 2rem;
             margin-bottom: 2rem;
+            font-weight: 300;
         }
-        
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .cta-button {
             display: inline-block;
             background: #ff6b6b;
             color: white;
-            padding: 15px 30px;
+            padding: 18px 40px;
             text-decoration: none;
             border-radius: 50px;
-            font-size: 1.1rem;
-            transition: transform 0.3s;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            border: none;
+            cursor: pointer;
         }
-        
+
         .cta-button:hover {
+            background: #ff5252;
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
         }
-        
+
         /* Services Section */
         .services {
-            padding: 4rem 0;
-            background: #f8f9fa;
+            padding: 6rem 0;
+            background: white;
         }
-        
+
         .services h2 {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
             color: #333;
         }
-        
+
+        .services-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 4rem;
+        }
+
         .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-card h3 {
+            color: #4a90e2;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-button {
+            background: #4a90e2;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-button:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 0;
+            background: #f8f9fa;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            color: #333;
+        }
+
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-        
-        .service-card {
+
+        .feature-item {
             background: white;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             text-align: center;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
         }
-        
-        .service-card:hover {
+
+        .feature-item:hover {
             transform: translateY(-5px);
         }
-        
-        .service-card h3 {
-            color: #667eea;
-            font-size: 1.5rem;
+
+        .feature-icon {
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
-        
-        /* Features Section */
-        .features {
-            padding: 4rem 0;
+
+        .feature-item h4 {
+            color: #4a90e2;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
         }
-        
-        .features h2 {
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .testimonials h2 {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            color: #333;
         }
-        
-        .features-grid {
+
+        .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
-        
-        .feature-item {
-            padding: 1.5rem;
+
+        .testimonial-card {
             background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
         }
-        
+
+        .testimonial-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-name {
+            font-weight: bold;
+            color: #4a90e2;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .discount-button {
+            background: #ff6b6b;
+            color: white;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .discount-button:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+
+        .submit-button {
+            background: #4a90e2;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+        }
+
         /* Footer */
         footer {
             background: #333;
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 3rem 0;
         }
-        
-        .discount-banner {
-            background: #ff6b6b;
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #4a90e2;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #4a90e2;
             color: white;
             text-align: center;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 10px;
+            line-height: 40px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background 0.3s ease;
         }
-        
-        .discount-banner h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+
+        .social-links a:hover {
+            background: #ff6b6b;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header/Hero Section -->
+    <!-- Header -->
     <header>
-        <div class="container">
-            <div class="hero">
-                <h1>PetCare Pro</h1>
-                <p>El servicio de cuidado de mascotas más confiable de la ciudad</p>
-                <p>¡Cuidamos de tus mascotas y tu hogar como si fueran familia!</p>
-                <a href="#contacto" class="cta-button">Reserva Ahora</a>
-            </div>
-        </div>
+        <nav class="container">
+            <div class="logo">🐾 Purrfect Neighbour</div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Services Section -->
-    <section class="services">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="container">
-            <h2>Nuestros Servicios</h2>
+            <h1>Winnipeg's Most Reliable Pet & Home Sitting Service</h1>
+            <h2>We Care For Your Pets & Home Like Family</h2>
+            <p>Purrfect Neighbour is proud to be the trusted partner of Winnipeg home & pet owners everywhere! We are more than pet sitters and dog walkers, we are pet lovers, and we're on a mission to give your pets & home the timely love, care & attention they deserve!</p>
+            <button class="cta-button" onclick="scrollToSection('contacto')">Book Now - 10% OFF</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p class="services-subtitle">Professional Pet & Home Care Services</p>
+            
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>🐱 Check-ins para Mascotas</h3>
-                    <p>Visitas regulares para asegurarnos de que tus mascotas estén felices y saludables mientras estás fuera.</p>
+                    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pet Check-ins" class="service-image">
+                    <div class="service-content">
+                        <h3>🐱 PET CHECK-INS</h3>
+                        <p>You love your pet(s) with all your heart, but sometimes life gets busy. You do not have to leave your pet(s) lonely & wanting while away from home. Purrfect Neighbour is here to help!</p>
+                        <button class="service-button" onclick="showBookingForm('checkins')">Book Check-ins</button>
+                    </div>
                 </div>
+
                 <div class="service-card">
-                    <h3>🐕 Paseos de Perros</h3>
-                    <p>Paseos de 30 o 60 minutos para mantener a tus perros activos y felices con su rutina diaria.</p>
+                    <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dog Walking" class="service-image">
+                    <div class="service-content">
+                        <h3>🐕 DOG WALKING</h3>
+                        <p>Choose between our 30 or 60 minute package to keep your fur babies up-to-date with their daily routine exercise while letting them use nature's bathroom.</p>
+                        <button class="service-button" onclick="showBookingForm('walking')">Book Walking</button>
+                    </div>
                 </div>
+
                 <div class="service-card">
-                    <h3>🏠 Cuidado del Hogar</h3>
-                    <p>Mientras estás de vacaciones, nos encargamos de la seguridad y mantenimiento de tu hogar.</p>
+                    <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Home Sitting" class="service-image">
+                    <div class="service-content">
+                        <h3>🏠 HOME SITTING</h3>
+                        <p>While you are working late, or away on vacation, your Purrfect Neighbour is here to look after your Winnipeg home to ensure its safety and proper care!</p>
+                        <button class="service-button" onclick="showBookingForm('homesitting')">Book Home Sitting</button>
+                    </div>
                 </div>
+
                 <div class="service-card">
-                    <h3>💰 Paquete Combo</h3>
-                    <p>Ahorra dinero con nuestro paquete especial que combina todos nuestros servicios.</p>
+                    <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pet & Home Combo" class="service-image">
+                    <div class="service-content">
+                        <h3>💰 PET & HOME SITTING COMBO</h3>
+                        <p>Save some $$$ with our special package that combines services from our pet check-ins, pet walking and home sitting, exclusively for Winnipeg's home & pet owners!</p>
+                        <button class="service-button" onclick="showBookingForm('combo')">Book Combo</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Discount Banner -->
-    <div class="container">
-        <div class="discount-banner">
-            <h3>¡Oferta Especial!</h3>
-            <p>Obtén 10% de descuento en tu primera reserva</p>
-            <p>🎉 Por tiempo limitado 🎉</p>
-        </div>
-    </div>
-
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2>¿Por Qué Elegirnos?</h2>
+            <h2>Why Purrfect Neighbour?</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 3rem;">
+                Your pets and your property are the most important stakeholders in our relationship!
+            </p>
+            
             <div class="features-grid">
                 <div class="feature-item">
-                    <h4>✅ Seguros Completos</h4>
-                    <p>Estamos completamente asegurados para mantener tus mascotas seguras</p>
+                    <div class="feature-icon">🛡️</div>
+                    <h4>Fully Insured</h4>
+                    <p>We are Fully Insured in order to keep Your Pets Safe!</p>
                 </div>
                 <div class="feature-item">
-                    <h4>📸 Fotos de Calidad</h4>
-                    <p>Te enviamos fotos de alta calidad de tus mascotas en cada visita</p>
+                    <div class="feature-icon">📸</div>
+                    <h4>High Quality Pictures</h4>
+                    <p>High Quality Pictures of Your Fur Babies after every visit</p>
                 </div>
                 <div class="feature-item">
-                    <h4>📅 Horario Flexible</h4>
-                    <p>Adaptamos nuestros horarios a tus necesidades</p>
+                    <div class="feature-icon">📅</div>
+                    <h4>Flexible Scheduling</h4>
+                    <p>We work around your schedule to provide the best service</p>
                 </div>
                 <div class="feature-item">
-                    <h4>💬 Comunicación Constante</h4>
-                    <p>Nos comunicamos contigo después de cada visita</p>
+                    <div class="feature-icon">💬</div>
+                    <h4>Communication</h4>
+                    <p>Communication With You After Every Single Visit</p>
                 </div>
                 <div class="feature-item">
-                    <h4>🩺 Certificados en Primeros Auxilios</h4>
-                    <p>Certificados en primeros auxilios para perros y gatos</p>
+                    <div class="feature-icon">🩺</div>
+                    <h4>First Aid Certified</h4>
+                    <p>First Aid Certified (Cats & Dogs) for your peace of mind</p>
                 </div>
                 <div class="feature-item">
-                    <h4>💻 Reservas Online</h4>
-                    <p>Sistema fácil de reservas online sin esperar cotizaciones</p>
+                    <div class="feature-icon">💻</div>
+                    <h4>Easy Online Booking</h4>
+                    <p>Easy-To-Use Online Booking (No More Waiting For Quotes)</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="testimonials">
+        <div class="container">
+            <h2>A Few of Our Purr-fect Clients Below!</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Client" class="testimonial-image">
+                    <p class="testimonial-text">"Purrfect Neighbour has been amazing with our two cats! They send us updates and photos every time they visit. Highly recommend!"</p>
+                    <p class="testimonial-name">- Sarah Johnson</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Client" class="testimonial-image">
+                    <p class="testimonial-text">"Professional, reliable, and truly cares about our dog Max. The daily walks have made such a difference!"</p>
+                    <p class="testimonial-name">- Michael Chen</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Client" class="testimonial-image">
+                    <p class="testimonial-text">"They took care of our home and pets while we were away for two weeks. Everything was perfect when we returned!"</p>
+                    <p class="testimonial-name">- Emily Rodriguez</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>For a Limited Time Only, Get 10% OFF Your First Booking!</h2>
+            <p>Don't wait! Book your pet care services today and save!</p>
+            <button class="discount-button" onclick="showDiscountModal()">Claim Your 10% Discount</button>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 3rem; color: #333;">Book Your Service</h2>
+            
+            <form class="contact-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Service Type *</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="checkins">Pet Check-ins</option>
+                        <option value="walking">Dog Walking</option>
+                        <option value="homesitting">Home Sitting</option>
+                        <option value="combo">Pet & Home Combo</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dates">Preferred Dates *</label>
+                    <input type="text" id="dates" name="dates" placeholder="e.g., March 15-20, 2024" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us about your pets and their needs..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Submit Booking Request</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 PetCare Pro. Todos los derechos reservados.</p>
-            <p>Contacto: info@petcarepro.com | Tel: 555-123-4567</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🐾 Purrfect Neighbour</h3>
+                    <p>Winnipeg's Most Reliable Pet & Home Sitting Service</p>
+                    <div class="social-links">
+                        <a href="#">f</a>
+                        <a href="#">t</a>
+                        <a href="#">i</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p>Pet Check-ins</p>
+                    <p>Dog Walking</p>
+                    <p>Home Sitting</p>
+                    <p>Pet & Home Combo</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📧 info@purrfectneighbour.ca</p>
+                    <p>📞 (204) 123-4567</p>
+                    <p>📍 Winnipeg, MB, Canada</p>
+                </div>
+            </div>
+            <p>&copy; 2024 Purrfect Neighbour. All rights reserved. | Partnered with PROfur Pet Insurance</p>
         </div>
     </footer>
+
+    <script>
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Show booking form with pre-selected service
+        function showBookingForm(service) {
+            scrollToSection('contacto');
+            document.getElementById('service').value = service;
+        }
+
+        // Show discount modal
+        function showDiscountModal() {
+            alert('🎉 10% DISCOUNT APPLIED! 🎉\n\nUse code: WELCOME10 at checkout to get 10% off your first booking!\n\nThis offer expires in 24 hours, so book now!');
+        }
+
+        // Form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate form submission
+            alert(`🎉 Thank you for your booking request, ${data.name}!\n\nWe've received your request for ${data.service} services.\n\nOur team will contact you within 2 hours at ${data.email} or ${data.phone} to confirm your booking and provide a quote.\n\nDon't forget to mention your 10% discount code: WELCOME10\n\nWe look forward to caring for your furry friends! 🐾`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Add animation to service cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
