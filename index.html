@@ -1,23 +1,127 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tu Vecino Peludo | Cuidado de Mascotas y Hogar</title>
-  <meta name="description" content="Cuidado confiable de mascotas y hogar: paseos, visitas, cuidado en casa y paquetes completos. Reserva en minutos." />
+  <title>Your Furry Neighbor | Pet & Home Care</title>
+  <meta name="description" content="Reliable pet and home care—walks, visits, house sitting, and bundled packages. Book online in minutes." />
   <link rel="preconnect" href="https://images.unsplash.com">
-  <!-- estilos omitidos por brevedad, igual que en la versión anterior -->
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #666666;
+      --primary: #2b7de9;
+      --primary-dark: #1f5fb3;
+      --accent: #ffb703;
+      --surface: #f7f9fc;
+      --border: #e5e7eb;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      background: #fff; border-bottom: 1px solid var(--border);
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0;
+    }
+    .brand { font-weight: 700; letter-spacing: 0.2px; }
+    .menu { display: flex; gap: 18px; }
+    .menu a { color: var(--text); font-weight: 600; }
+    .hero {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px;
+      padding: 48px 0;
+    }
+    .hero h1 { font-size: 2.2rem; margin: 0 0 12px; }
+    .hero p { font-size: 1.05rem; color: var(--muted); margin: 0 0 18px; }
+    .cta {
+      display: inline-block; background: var(--primary); color: #fff;
+      padding: 12px 18px; border-radius: 10px; font-weight: 700;
+    }
+    .cta:hover { background: var(--primary-dark); text-decoration: none; }
+    .badge { display: inline-block; margin-left: 10px; color: #0a7a0a; font-weight: 700; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+    }
+    .card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .card-body { padding: 16px; }
+    .grid { display: grid; gap: 20px; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    section { padding: 40px 0; }
+    h2 { font-size: 1.6rem; margin: 0 0 16px; }
+    h3 { font-size: 1.2rem; margin: 0 0 8px; }
+    .features { display: grid; gap: 14px; grid-template-columns: repeat(3, 1fr); }
+    .feature {
+      border: 1px solid var(--border); border-radius: 12px; padding: 14px; background: #fff;
+    }
+    .feature h4 { margin: 0 0 6px; font-size: 1.05rem; }
+    .feature p { margin: 0; color: var(--muted); }
+    .testi {
+      display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr);
+    }
+    .testi-card {
+      border: 1px solid var(--border); border-radius: 12px; padding: 14px; background: #fff;
+    }
+    .testi-card img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
+    .testi-quote { font-style: italic; margin: 10px 0; }
+    .promo {
+      border: 2px dashed var(--accent); border-radius: 12px; padding: 16px; background: #fffef6;
+    }
+    form {
+      display: grid; gap: 12px; grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--border); border-radius: 12px; padding: 16px; background: #fff;
+    }
+    form .full { grid-column: 1 / -1; }
+    label { font-weight: 600; font-size: 0.95rem; }
+    input, select, textarea {
+      width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 10px;
+      font-size: 1rem; background: var(--surface);
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    button[type="submit"] {
+      background: var(--primary); color: #fff; border: none; padding: 12px 16px;
+      border-radius: 10px; font-weight: 700; cursor: pointer;
+    }
+    button[type="submit"]:hover { background: var(--primary-dark); }
+    footer {
+      margin-top: 30px; padding: 24px 0; border-top: 1px solid var(--border); background: #fff;
+    }
+    .footer-grid { display: grid; gap: 20px; grid-template-columns: 2fr 1fr 1fr; }
+    .social a {
+      display: inline-block; width: 36px; height: 36px; border-radius: 50%;
+      background: var(--surface); border: 1px solid var(--border);
+      display: inline-flex; align-items: center; justify-content: center; font-weight: 700; color: var(--text);
+      margin-right: 8px;
+    }
+    .muted { color: var(--muted); }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr; }
+      .testi { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      form { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <div class="wrap nav">
-      <div class="brand">🐾 Tu Vecino Peludo</div>
-      <nav class="menu" aria-label="Principal">
-        <a href="#home">Inicio</a>
-        <a href="#services">Servicios</a>
-        <a href="#testimonials">Testimonios</a>
-        <a href="#booking">Reservas</a>
+      <div class="brand">🐾 Your Furry Neighbor</div>
+      <nav class="menu" aria-label="Main">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#booking">Booking</a>
       </nav>
     </div>
   </header>
@@ -25,74 +129,152 @@
   <main id="home" class="wrap">
     <section class="hero">
       <div>
-        <h1>El servicio de cuidado más confiable del barrio</h1>
-        <p>Cuidamos de tus mascotas y tu hogar como si fueran familia. Somos amantes de los animales que mantienen felices a tus mascotas y seguro tu hogar mientras estás fuera.</p>
-        <a class="cta" href="#booking">Reserva ahora</a>
-        <span class="badge">10% de descuento en tu primera reserva</span>
+        <h1>The most trusted care service in town</h1>
+        <p>We care for your pets and your home like family. We’re animal lovers who keep your pets happy and your home secure while you’re away.</p>
+        <a class="cta" href="#booking">Book now</a>
+        <span class="badge">10% off first booking</span>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?..." alt="Mascotas felices en casa" />
+        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Happy pets at home" />
         <div class="card-body">
-          <p class="muted">Visitas confiables, paseos de perros, cuidado en casa y paquetes completos—adaptados a tu horario.</p>
+          <p class="muted">Reliable pet visits, dog walks, house sitting, and bundled packages—tailored to your schedule.</p>
         </div>
       </div>
     </section>
 
     <section id="services">
-      <h2>Nuestros servicios</h2>
-      <!-- tarjetas de servicios traducidas -->
-      <h2>¿Por qué elegirnos?</h2>
-      <!-- características traducidas -->
+      <h2>Our services</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pet visits" />
+          <div class="card-body">
+            <h3>🐱 Pet visits</h3>
+            <p>Busy day? We stop by so your pets don’t feel alone—feeding, affection, litter or potty checks, and a quick wellness look.</p>
+            <p><a class="cta" href="#booking">Book visits</a></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dog walks" />
+          <div class="card-body">
+            <h3>🐕 Dog walks</h3>
+            <p>30 or 60-minute walks to keep your dog active, happy, and relaxed. Potty breaks, enrichment, and lots of tail wags.</p>
+            <p><a class="cta" href="#booking">Book walks</a></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Home care" />
+          <div class="card-body">
+            <h3>🏠 House sitting</h3>
+            <p>Heading out of town? We keep your home secure and tidy—checks, plant watering, mail pickup, and status updates.</p>
+            <p><a class="cta" href="#booking">Book house sitting</a></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Full bundle" />
+          <div class="card-body">
+            <h3>💰 Full bundle</h3>
+            <p>Save with a package that includes pet visits, dog walks, and home care—everything in one plan.</p>
+            <p><a class="cta" href="#booking">Book bundle</a></p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Why choose us?</h2>
+      <div class="features">
+        <div class="feature">
+          <h4>Insured</h4>
+          <p>We’re fully insured so your pets and home are protected—peace of mind included.</p>
+        </div>
+        <div class="feature">
+          <h4>Photo updates</h4>
+          <p>Get high-quality photos after every visit so you can see how they’re doing.</p>
+        </div>
+        <div class="feature">
+          <h4>Flexible hours</h4>
+          <p>We adapt to your schedule—easy to coordinate, no hassle.</p>
+        </div>
+        <div class="feature">
+          <h4>Stay in touch</h4>
+          <p>We send a quick summary after each visit with any notes you should know.</p>
+        </div>
+        <div class="feature">
+          <h4>Pet first aid certified</h4>
+          <p>Certified in dog and cat first aid—prepared for the unexpected.</p>
+        </div>
+        <div class="feature">
+          <h4>Online booking</h4>
+          <p>Reserve in under 2 minutes from your phone.</p>
+        </div>
+      </div>
     </section>
 
     <section id="testimonials">
-      <h2>Algunos de nuestros clientes más felices</h2>
-      <!-- testimonios traducidos -->
+      <h2>Some of our happiest clients</h2>
+      <div class="testi">
+        <div class="testi-card">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Client Ana" />
+          <p class="testi-quote">“Your Furry Neighbors are the best! They take great care of my two cats and send photos every visit. Highly recommended!”</p>
+          <p class="muted">—Ana García</p>
+        </div>
+        <div class="testi-card">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Client Carlos" />
+          <p class="testi-quote">“Professional and trustworthy. My dog Max is so happy with the daily walks—total game changer.”</p>
+          <p class="muted">—Carlos Méndez</p>
+        </div>
+        <div class="testi-card">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Client Laura" />
+          <p class="testi-quote">“We were away for two weeks and came back to everything perfect. A thousand points!”</p>
+          <p class="muted">—Laura Fernández</p>
+        </div>
+      </div>
     </section>
 
     <section id="promo">
       <div class="promo">
-        <h2>Por tiempo limitado: 10% de descuento en tu primera reserva</h2>
-        <p>No lo dejes pasar—reserva ahora y ahorra.</p>
-        <p><a class="cta" href="#booking">Obtén tu 10% de descuento</a></p>
+        <h2>Limited time: 10% off your first booking</h2>
+        <p>Don’t miss out—book now and save.</p>
+        <p><a class="cta" href="#booking">Get 10% off</a></p>
       </div>
     </section>
 
     <section id="booking">
-      <h2>Reserva tu servicio</h2>
-      <form action="#" method="post" aria-label="Formulario de reservas">
+      <h2>Book your service</h2>
+      <form action="#" method="post" aria-label="Booking form">
         <div class="full">
-          <label for="name">Tu nombre *</label>
-          <input id="name" name="name" type="text" required placeholder="Nombre completo" />
+          <label for="name">Your name *</label>
+          <input id="name" name="name" type="text" required placeholder="Full name" />
         </div>
         <div>
-          <label for="email">Tu correo *</label>
-          <input id="email" name="email" type="email" required placeholder="tucorreo@ejemplo.com" />
+          <label for="email">Your email *</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
         </div>
         <div>
-          <label for="phone">Tu teléfono *</label>
+          <label for="phone">Your phone *</label>
           <input id="phone" name="phone" type="tel" required placeholder="+53 ..." />
         </div>
         <div class="full">
-          <label for="service">¿Qué servicio deseas? *</label>
+          <label for="service">Which service do you want? *</label>
           <select id="service" name="service" required>
-            <option value="">Elige un servicio</option>
-            <option value="visits">Visitas a mascotas</option>
-            <option value="walks">Paseos de perros</option>
-            <option value="house">Cuidado en casa</option>
-            <option value="bundle">Paquete completo</option>
+            <option value="">Choose a service</option>
+            <option value="visits">Pet visits</option>
+            <option value="walks">Dog walks</option>
+            <option value="house">House sitting</option>
+            <option value="bundle">Full bundle</option>
           </select>
         </div>
         <div class="full">
-          <label for="days">¿Qué días necesitas? *</label>
-          <input id="days" name="days" type="text" required placeholder="Ej: Lunes–Miércoles, 20–22 Ene" />
+          <label for="days">Which days do you need? *</label>
+          <input id="days" name="days" type="text" required placeholder="e.g., Mon–Wed, Jan 20–22" />
         </div>
         <div class="full">
-          <label for="notes">¿Algo más que debamos saber?</label>
-          <textarea id="notes" name="notes" placeholder="Rutinas de la mascota, detalles de acceso, solicitudes especiales"></textarea>
+          <label for="notes">Anything else to tell us?</label>
+          <textarea id="notes" name="notes" placeholder="Pet routines, access details, special requests"></textarea>
         </div>
         <div class="full">
-          <button type="submit">Enviar reserva</button>
+          <button type="submit">Submit booking</button>
         </div>
       </form>
     </section>
@@ -101,32 +283,35 @@
   <footer>
     <div class="wrap footer-grid">
       <div>
-        <h3>🐾 Tu Vecino Peludo</h3>
-        <p class="muted">El servicio de cuidado más amigable del barrio.</p>
-        <div class="social" aria-label="Redes sociales">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Twitter">t</a>
-          <a href="#" aria-label="Instagram">i</a>
+        <h3>🐾 Your Furry Neighbor</h3>
+        <p class="muted">The friendliest care service in the neighborhood.</p>
+        <div class="social" aria-label="Social links">
+          <a href="#"
+             aria-label="Facebook">f</a>
+          <a href="#"
+             aria-label="Twitter">t</a>
+          <a href="#"
+             aria-label="Instagram">i</a>
         </div>
       </div>
       <div>
-        <h4>Servicios</h4>
+        <h4>Services</h4>
         <ul>
-          <li><a href="#services">Visitas a mascotas</a></li>
-          <li><a href="#services">Paseos de perros</a></li>
-          <li><a href="#services">Cuidado en casa</a></li>
-          <li><a href="#services">Paquete completo</a></li>
+          <li><a href="#services">Pet visits</a></li>
+          <li><a href="#services">Dog walks</a></li>
+          <li><a href="#services">House sitting</a></li>
+          <li><a href="#services">Full bundle</a></li>
         </ul>
       </div>
       <div>
-        <h4>Contacto</h4>
+        <h4>Contact</h4>
         <p>📧 hola@tuvecinopeludo.com</p>
         <p>📞 11-1234-5678</p>
-        <p>📍 La Habana, Cuba</p>
+        <p>📍 Havana, Cuba</p>
       </div>
     </div>
     <div class="wrap">
-      <p class="muted">© 2026 Tu Vecino Peludo. Todos los derechos reservados.</p>
+      <p class="muted">© 2026 Your Furry Neighbor. All rights reserved.</p>
     </div>
   </footer>
 
