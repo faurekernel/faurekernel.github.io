@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purrfect Neighbour | Servicios de Cuidado de Mascotas</title>
+    <title>Tu Vecino Peludo | Cuidado de Mascotas y Hogar</title>
     <style>
         * {
             margin: 0;
@@ -12,7 +12,7 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #fafafa;
@@ -43,7 +43,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #4a90e2;
+            color: #ff6b6b;
         }
 
         .nav-links {
@@ -60,13 +60,13 @@
         }
 
         .nav-links a:hover {
-            color: #4a90e2;
+            color: #ff6b6b;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(74, 144, 226, 0.8), rgba(74, 144, 226, 0.8)), 
-                        url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(255, 107, 107, 0.8), rgba(255, 107, 107, 0.8)), 
+                        url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -96,7 +96,7 @@
 
         .cta-button {
             display: inline-block;
-            background: #ff6b6b;
+            background: #4a90e2;
             color: white;
             padding: 18px 40px;
             text-decoration: none;
@@ -104,15 +104,15 @@
             font-size: 1.2rem;
             font-weight: bold;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
             border: none;
             cursor: pointer;
         }
 
         .cta-button:hover {
-            background: #ff5252;
+            background: #357abd;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
         }
 
         /* Services Section */
@@ -165,7 +165,7 @@
         }
 
         .service-card h3 {
-            color: #4a90e2;
+            color: #ff6b6b;
             font-size: 1.8rem;
             margin-bottom: 1rem;
         }
@@ -177,7 +177,7 @@
         }
 
         .service-button {
-            background: #4a90e2;
+            background: #ff6b6b;
             color: white;
             padding: 12px 25px;
             border: none;
@@ -188,7 +188,7 @@
         }
 
         .service-button:hover {
-            background: #357abd;
+            background: #ff5252;
             transform: translateY(-2px);
         }
 
@@ -230,7 +230,7 @@
         }
 
         .feature-item h4 {
-            color: #4a90e2;
+            color: #ff6b6b;
             font-size: 1.3rem;
             margin-bottom: 1rem;
         }
@@ -277,7 +277,7 @@
 
         .testimonial-name {
             font-weight: bold;
-            color: #4a90e2;
+            color: #ff6b6b;
         }
 
         /* CTA Section */
@@ -339,7 +339,8 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 12px;
             border: 2px solid #e0e0e0;
@@ -349,13 +350,14 @@
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
-            border-color: #4a90e2;
+            border-color: #ff6b6b;
         }
 
         .submit-button {
-            background: #4a90e2;
+            background: #ff6b6b;
             color: white;
             padding: 15px 30px;
             border: none;
@@ -367,7 +369,7 @@
         }
 
         .submit-button:hover {
-            background: #357abd;
+            background: #ff5252;
             transform: translateY(-2px);
         }
 
@@ -388,7 +390,7 @@
 
         .footer-section h3 {
             margin-bottom: 1rem;
-            color: #4a90e2;
+            color: #ff6b6b;
         }
 
         .social-links {
@@ -402,7 +404,7 @@
             display: inline-block;
             width: 40px;
             height: 40px;
-            background: #4a90e2;
+            background: #ff6b6b;
             color: white;
             text-align: center;
             line-height: 40px;
@@ -412,7 +414,7 @@
         }
 
         .social-links a:hover {
-            background: #ff6b6b;
+            background: #ff5252;
         }
 
         /* Responsive */
@@ -439,12 +441,12 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">🐾 Purrfect Neighbour</div>
+            <div class="logo">🐾 Tu Vecino Peludo</div>
             <ul class="nav-links">
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#testimonios">Testimonios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#contacto">Reservas</a></li>
             </ul>
         </nav>
     </header>
@@ -452,53 +454,53 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>Winnipeg's Most Reliable Pet & Home Sitting Service</h1>
-            <h2>We Care For Your Pets & Home Like Family</h2>
-            <p>Purrfect Neighbour is proud to be the trusted partner of Winnipeg home & pet owners everywhere! We are more than pet sitters and dog walkers, we are pet lovers, and we're on a mission to give your pets & home the timely love, care & attention they deserve!</p>
-            <button class="cta-button" onclick="scrollToSection('contacto')">Book Now - 10% OFF</button>
+            <h1>El Servicio de Cuidado Más Confi de la Ciudad</h1>
+            <h2>Cuidamos a tus Mascotas y tu Hogar como si fueran Familia</h2>
+            <p>¡Hola! Somos tus vecinos peludos, los más copados del barrio para cuidar a tus animalitos. No somos solo cuidadores, somos amantes de los animales que queremos que tus mascotas estén felices y tu casa súper segura mientras no estás.</p>
+            <button class="cta-button" onclick="scrollToSection('contacto')">Reservá Ahora - 10% OFF</button>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="servicios" class="services">
         <div class="container">
-            <h2>Our Services</h2>
-            <p class="services-subtitle">Professional Pet & Home Care Services</p>
+            <h2>Nuestros Servicios</h2>
+            <p class="services-subtitle">Servicios profesionales de cuidado de mascotas y hogar</p>
             
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pet Check-ins" class="service-image">
+                    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Visitas a Mascotas" class="service-image">
                     <div class="service-content">
-                        <h3>🐱 PET CHECK-INS</h3>
-                        <p>You love your pet(s) with all your heart, but sometimes life gets busy. You do not have to leave your pet(s) lonely & wanting while away from home. Purrfect Neighbour is here to help!</p>
-                        <button class="service-button" onclick="showBookingForm('checkins')">Book Check-ins</button>
+                        <h3>🐱 VISITAS A TUS MASCOTAS</h3>
+                        <p>¿A veces estás re ocupado? No te preocupes, nosotros pasamos a visitar a tus animalitos para que no se sientan solos. Les damos cariño, comida y chequeamos que estén joya!</p>
+                        <button class="service-button" onclick="showBookingForm('checkins')">Reservar Visitas</button>
                     </div>
                 </div>
 
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dog Walking" class="service-image">
+                    <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Paseos de Perros" class="service-image">
                     <div class="service-content">
-                        <h3>🐕 DOG WALKING</h3>
-                        <p>Choose between our 30 or 60 minute package to keep your fur babies up-to-date with their daily routine exercise while letting them use nature's bathroom.</p>
-                        <button class="service-button" onclick="showBookingForm('walking')">Book Walking</button>
+                        <h3>🐕 PASEOS DE PERROS</h3>
+                        <p>¿Tu perro tiene energía de sobra? Elegí entre paseos de 30 o 60 minutos para que haga sus necesidades y se mantenga activo. ¡Lo vamos a dejar re cansado y feliz!</p>
+                        <button class="service-button" onclick="showBookingForm('walking')">Reservar Paseos</button>
                     </div>
                 </div>
 
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Home Sitting" class="service-image">
+                    <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cuidado del Hogar" class="service-image">
                     <div class="service-content">
-                        <h3>🏠 HOME SITTING</h3>
-                        <p>While you are working late, or away on vacation, your Purrfect Neighbour is here to look after your Winnipeg home to ensure its safety and proper care!</p>
-                        <button class="service-button" onclick="showBookingForm('homesitting')">Book Home Sitting</button>
+                        <h3>🏠 CUIDAMOS TU CASA</h3>
+                        <p>¿Te vas de vacaciones? Nos quedamos nosotros a cuidar tu casa para que esté segura y en orden. Revisamos que todo esté bien y mantenemos todo tal cual lo dejaste.</p>
+                        <button class="service-button" onclick="showBookingForm('homesitting')">Reservar Cuidado de Casa</button>
                     </div>
                 </div>
 
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pet & Home Combo" class="service-image">
+                    <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Combo Completo" class="service-image">
                     <div class="service-content">
-                        <h3>💰 PET & HOME SITTING COMBO</h3>
-                        <p>Save some $$$ with our special package that combines services from our pet check-ins, pet walking and home sitting, exclusively for Winnipeg's home & pet owners!</p>
-                        <button class="service-button" onclick="showBookingForm('combo')">Book Combo</button>
+                        <h3>💰 COMBO COMPLETO</h3>
+                        <p>¿Querés ahorrar plata? Este paquete incluye visitas a tus mascotas, paseos y cuidado del hogar. Todo en uno para que no te preocupes de nada. ¡Súper recomendado!</p>
+                        <button class="service-button" onclick="showBookingForm('combo')">Reservar Combo</button>
                     </div>
                 </div>
             </div>
@@ -508,41 +510,41 @@
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2>Why Purrfect Neighbour?</h2>
+            <h2>¿Por qué elegirnos?</h2>
             <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 3rem;">
-                Your pets and your property are the most important stakeholders in our relationship!
+                Tus mascotas y tu casa son lo más importante para nosotros
             </p>
             
             <div class="features-grid">
                 <div class="feature-item">
                     <div class="feature-icon">🛡️</div>
-                    <h4>Fully Insured</h4>
-                    <p>We are Fully Insured in order to keep Your Pets Safe!</p>
+                    <h4>Tenesos Seguro</h4>
+                    <p>Estamos súper asegurados para que tus mascotas estén 100% protegidas. ¡Sin preocupaciones!</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">📸</div>
-                    <h4>High Quality Pictures</h4>
-                    <p>High Quality Pictures of Your Fur Babies after every visit</p>
+                    <h4>Fotos de Calidad</h4>
+                    <p>Te mandamos fotos re lindas de tus animalitos después de cada visita para que veas que están joya</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">📅</div>
-                    <h4>Flexible Scheduling</h4>
-                    <p>We work around your schedule to provide the best service</p>
+                    <h4>Horarios Flexibles</h4>
+                    <p>Nos adaptamos a tu horario, no al revés. ¡Súper fácil coordinar!</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">💬</div>
-                    <h4>Communication</h4>
-                    <p>Communication With You After Every Single Visit</p>
+                    <h4>Nos quedamos en contacto</h4>
+                    <p>Te escribimos después de cada visita para contarte cómo fue todo</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">🩺</div>
-                    <h4>First Aid Certified</h4>
-                    <p>First Aid Certified (Cats & Dogs) for your peace of mind</p>
+                    <h4>Certificados en Primeros Auxilios</h4>
+                    <p>Tenemos certificado en primeros auxilios para perros y gatos. ¡Todo bajo control!</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">💻</div>
-                    <h4>Easy Online Booking</h4>
-                    <p>Easy-To-Use Online Booking (No More Waiting For Quotes)</p>
+                    <h4>Reservas Online</h4>
+                    <p>Reservás en 2 minutos desde tu celu, sin vueltas ni demoras</p>
                 </div>
             </div>
         </div>
@@ -551,25 +553,25 @@
     <!-- Testimonials Section -->
     <section id="testimonios" class="testimonials">
         <div class="container">
-            <h2>A Few of Our Purr-fect Clients Below!</h2>
+            <h2>Algunos de nuestros clientes más felices</h2>
             
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Client" class="testimonial-image">
-                    <p class="testimonial-text">"Purrfect Neighbour has been amazing with our two cats! They send us updates and photos every time they visit. Highly recommend!"</p>
-                    <p class="testimonial-name">- Sarah Johnson</p>
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Clienta" class="testimonial-image">
+                    <p class="testimonial-text">"¡Tus Vecinos Peludos son lo más! Cuidan re bien a mis dos gatitos y me mandan fotos en cada visita. ¡Los super recomiendo!"</p>
+                    <p class="testimonial-name">- Ana García</p>
                 </div>
                 
                 <div class="testimonial-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Client" class="testimonial-image">
-                    <p class="testimonial-text">"Professional, reliable, and truly cares about our dog Max. The daily walks have made such a difference!"</p>
-                    <p class="testimonial-name">- Michael Chen</p>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Cliente" class="testimonial-image">
+                    <p class="testimonial-text">"Re profesionales y confiables. Mi perro Max está re feliz con los paseos diarios. ¡Un cambio total!"</p>
+                    <p class="testimonial-name">- Carlos Méndez</p>
                 </div>
                 
                 <div class="testimonial-card">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Client" class="testimonial-image">
-                    <p class="testimonial-text">"They took care of our home and pets while we were away for two weeks. Everything was perfect when we returned!"</p>
-                    <p class="testimonial-name">- Emily Rodriguez</p>
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Clienta" class="testimonial-image">
+                    <p class="testimonial-text">"Nos fuimos 2 semanas de vacaciones y cuando volvimos todo estaba perfecto. ¡Mil puntos!"</p>
+                    <p class="testimonial-name">- Laura Fernández</p>
                 </div>
             </div>
         </div>
@@ -578,55 +580,55 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>For a Limited Time Only, Get 10% OFF Your First Booking!</h2>
-            <p>Don't wait! Book your pet care services today and save!</p>
-            <button class="discount-button" onclick="showDiscountModal()">Claim Your 10% Discount</button>
+            <h2>¡Por tiempo limitado, 10% OFF en tu primera reserva!</h2>
+            <p>No te lo pierdas, reservá ahora y ahorrá plata</p>
+            <button class="discount-button" onclick="showDiscountModal()">Aprovechar el 10% de Descuento</button>
         </div>
     </section>
 
     <!-- Contact Form Section -->
     <section id="contacto" class="contact">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 3rem; color: #333;">Book Your Service</h2>
+            <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 3rem; color: #333;">Reservá tu servicio</h2>
             
             <form class="contact-form" id="bookingForm">
                 <div class="form-group">
-                    <label for="name">Your Name *</label>
+                    <label for="name">Tu Nombre *</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="email">Email Address *</label>
+                    <label for="email">Tu Email *</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="phone">Phone Number *</label>
+                    <label for="phone">Tu Celular *</label>
                     <input type="tel" id="phone" name="phone" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="service">Service Type *</label>
+                    <label for="service">¿Qué servicio querés? *</label>
                     <select id="service" name="service" required>
-                        <option value="">Select a service</option>
-                        <option value="checkins">Pet Check-ins</option>
-                        <option value="walking">Dog Walking</option>
-                        <option value="homesitting">Home Sitting</option>
-                        <option value="combo">Pet & Home Combo</option>
+                        <option value="">Elegí un servicio</option>
+                        <option value="checkins">Visitas a mascotas</option>
+                        <option value="walking">Paseos de perros</option>
+                        <option value="homesitting">Cuidado de casa</option>
+                        <option value="combo">Combo completo</option>
                     </select>
                 </div>
                 
                 <div class="form-group">
-                    <label for="dates">Preferred Dates *</label>
-                    <input type="text" id="dates" name="dates" placeholder="e.g., March 15-20, 2024" required>
+                    <label for="dates">¿Qué días necesitás? *</label>
+                    <input type="text" id="dates" name="dates" placeholder="Ej: 15 al 20 de marzo" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="message">Additional Information</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Tell us about your pets and their needs..."></textarea>
+                    <label for="message">¿Algo más que contarnos?</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Contanos sobre tus mascotas y qué necesitan..."></textarea>
                 </div>
                 
-                <button type="submit" class="submit-button">Submit Booking Request</button>
+                <button type="submit" class="submit-button">Enviar Reserva</button>
             </form>
         </div>
     </section>
@@ -636,8 +638,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>🐾 Purrfect Neighbour</h3>
-                    <p>Winnipeg's Most Reliable Pet & Home Sitting Service</p>
+                    <h3>🐾 Tu Vecino Peludo</h3>
+                    <p>El servicio de cuidado más copado del barrio</p>
                     <div class="social-links">
                         <a href="#">f</a>
                         <a href="#">t</a>
@@ -645,20 +647,20 @@
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h3>Services</h3>
-                    <p>Pet Check-ins</p>
-                    <p>Dog Walking</p>
-                    <p>Home Sitting</p>
-                    <p>Pet & Home Combo</p>
+                    <h3>Servicios</h3>
+                    <p>Visitas a mascotas</p>
+                    <p>Paseos de perros</p>
+                    <p>Cuidado de casa</p>
+                    <p>Combo completo</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>📧 info@purrfectneighbour.ca</p>
-                    <p>📞 (204) 123-4567</p>
-                    <p>📍 Winnipeg, MB, Canada</p>
+                    <h3>Contacto</h3>
+                    <p>📧 hola@tuvecinopeludo.com</p>
+                    <p>📞 11-1234-5678</p>
+                    <p>📍 Buenos Aires, Argentina</p>
                 </div>
             </div>
-            <p>&copy; 2024 Purrfect Neighbour. All rights reserved. | Partnered with PROfur Pet Insurance</p>
+            <p>&copy; 2024 Tu Vecino Peludo. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -676,7 +678,7 @@
 
         // Show discount modal
         function showDiscountModal() {
-            alert('🎉 10% DISCOUNT APPLIED! 🎉\n\nUse code: WELCOME10 at checkout to get 10% off your first booking!\n\nThis offer expires in 24 hours, so book now!');
+            alert('🎉 ¡10% DE DESCUENTO ACTIVADO! 🎉\n\nUsá el código: BIENVENIDO10 al hacer tu reserva y obtené 10% off en tu primer servicio.\n\n¡Esta oferta vence en 24 horas, así que no la dejes pasar!');
         }
 
         // Form submission
@@ -688,7 +690,7 @@
             const data = Object.fromEntries(formData);
             
             // Simulate form submission
-            alert(`🎉 Thank you for your booking request, ${data.name}!\n\nWe've received your request for ${data.service} services.\n\nOur team will contact you within 2 hours at ${data.email} or ${data.phone} to confirm your booking and provide a quote.\n\nDon't forget to mention your 10% discount code: WELCOME10\n\nWe look forward to caring for your furry friends! 🐾`);
+            alert(`🎉 ¡Gracias por tu reserva, ${data.name}!\n\nRecibimos tu pedido de ${data.service}.\n\nNos vamos a contactar en las próximas 2 horas a ${data.email} o ${data.phone} para confirmar todo y darte el precio final.\n\n¡No te olvides de mencionar tu código de descuento: BIENVENIDO10!\n\n¡Esperamos conocer a tus mascotas pronto! 🐾`);
             
             // Reset form
             this.reset();
